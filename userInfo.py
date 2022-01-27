@@ -2,14 +2,14 @@ import requests
 import apiKey
 
 
-class UserNotFoundError(Exception):
+class UserNotFoundException(Exception):
     """
     A class for exception when user is not found
     """
     pass
 
 
-class UnKnownError(Exception):
+class UnKnownException(Exception):
     """
     A class for exception when unknown error happened
     """
@@ -31,10 +31,10 @@ def get_user_id(username):
         return user_id, user_level
 
     elif r.status_code == 404:
-        raise UserNotFoundError
+        raise UserNotFoundException
 
     else:
-        raise UnKnownError
+        raise UnKnownException
 
 
 def get_user_name(user_id):
@@ -52,7 +52,7 @@ def get_user_name(user_id):
         return user_id, user_level
 
     elif r.status_code == 404:
-        raise UserNotFoundError
+        raise UserNotFoundException
 
     else:
-        raise UnKnownError
+        raise UnKnownException
