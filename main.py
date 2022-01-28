@@ -15,3 +15,11 @@ if __name__ == '__main__':
     print(jsonInfo.get_kart_info("30711352d5c6279e96a5f449e613c5f9f04889f1c3ca6049e600d2b867821af7"))
     print(jsonInfo.get_track_info("5873d5fe128549b597e984c87881e7d0ab632e381073164fe513e902f48a3ccd"))
     print(jsonInfo.get_game_type_info("effd66758144a29868663aa50e85d3d95c5bc0147d7fdb9802691c2087f3416e"))
+    print(matchInfo.get_all_matches('1728506595'))
+    print(matchInfo.get_all_matches('1728506595')['matches'][0])
+    print(matchInfo.get_all_matches('1728506595')['matches'][0]['matches'][0])
+    print(len(matchInfo.get_all_matches('1728506595')['matches'][0]['matches'][0]))
+    print(matchInfo.Match(matchInfo.get_all_matches('1728506595')['matches'][0]['matches'][0]))
+
+
+    #matchInfo.Match(matchInfo.get_all_matches('1728506595')[0])
