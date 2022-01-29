@@ -1,6 +1,7 @@
 import requests
-import apiKey
 
+from PyKartRider import jsonInfo
+from PyKartRider import apiKey
 
 class UserNotFoundException(Exception):
     """

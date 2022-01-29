@@ -1,7 +1,5 @@
 import requests
 
-import apiKey
-
 # Press the green button in the gutter to run the script.
 import jsonInfo
 import matchInfo
