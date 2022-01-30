@@ -13,10 +13,9 @@ class Match:
         Initializer method
         :param json_data: the json to load as match
         """
-        print(json_data)
         self.json_data = json_data
         self.match_id = json_data['matchId']
-        self.match_type = json_data['matchType']
+        self.game_type = jsonInfo.get_game_type_info(json_data['matchType'])
         self.track = jsonInfo.get_track_info(json_data['trackId'])
         self.character = jsonInfo.get_character_info(json_data['character'])
         self.start_time = json_data['startTime']
@@ -36,9 +35,9 @@ class Match:
         """
         return ("===== Match ID %s =====\n"
                 "Track Name : %s\nStart Time : %s\nEnd Time : %s\nMatch Rank : %s\nMatch Win : %s\n"
-                "Player Count : %s\nPlayer Kart : %s\nPlayer Flying Pet : %s\nPlayer Pet : %s\n"
+                "Player Count : %s\nPlayer Kart : %s\nPlayer Flying Pet : %s\nPlayer Pet : %s\nMatch Type : %s"
                 % (self.match_id, self.track, self.start_time, self.end_time,
-                   self.match_rank, self.match_win, self.player_count, self.kart, self.flying_pet, self.pet))
+                   self.match_rank, self.match_win, self.player_count, self.kart, self.flying_pet, self.pet, self.game_type))
 
     def get_json_data(self):
         """
@@ -50,8 +49,8 @@ class Match:
     def get_match_id(self):
         return self.match_id
 
-    def get_match_type(self):
-        return self.match_win
+    def game_type(self):
+        return self.game_type
 
     def get_character(self):
         return self.character
